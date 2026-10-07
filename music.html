@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Player | BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+  <h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+
+</div>
+
+<header>
+<h1>Music Player</h1>
+<p>Enjoy your favorite songs.</p>
+</header>
+
+<section>
+
+<div class="card" style="max-width:500px;margin:auto;text-align:center;">
+
+<h2 id="songTitle">Song 1</h2>
+
+<audio id="player"></audio>
+
+<br><br>
+
+<button onclick="previousSong()">⏮</button>
+
+<button onclick="playPause()">▶️ / ⏸</button>
+
+<button onclick="nextSong()">⏭</button>
+
+<br><br>
+
+<input
+type="range"
+id="progress"
+value="0"
+min="0"
+max="100"
+style="width:100%;">
+
+<br><br>
+
+<input
+type="range"
+id="volume"
+min="0"
+max="1"
+step="0.1"
+value="1">
+
+<p id="time">
+00:00 / 00:00
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 BishnuTech</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+const songs=[
+"music/song1.mp3",
+"music/song2.mp3",
+"music/song3.mp3"
+];
+
+const names=[
+"Song 1",
+"Song 2",
+"Song 3"
+];
+
+let index=0;
+
+const audio=document.getElementById("player");
+
+const title=document.getElementById("songTitle");
+
+const progress=document.getElementById("progress");
+
+const volume=document.getElementById("volume");
+
+audio.src=songs[index];
+
+function loadSong(){
+
+audio.src=songs[index];
+
+title.innerHTML=names[index];
+
+audio.load();
+
+}
+
+function playPause(){
+
+if(audio.paused){
+
+audio.play();
+
+}else{
+
+audio.pause();
+
+}
+
+}
+
+function nextSong(){
+
+index=(index+1)%songs.length;
+
+loadSong();
+
+audio.play();
+
+}
+
+function previousSong(){
+
+index--;
+
+if(index<0){
+
+index=songs.length-1;
+
+}
+
+loadSong();
+
+audio.play();
+
+}
+
+volume.oninput=function(){
+
+audio.volume=this.value;
+
+};
+
+audio.ontimeupdate=function(){
+
+progress.max=audio.duration||0;
+
+progress.value=audio.currentTime;
+
+document.getElementById("time").innerHTML=
+
+Math.floor(audio.currentTime)+"s / "+Math.floor(audio.duration||0)+"s";
+
+};
+
+progress.oninput=function(){
+
+audio.currentTime=this.value;
+
+};
+
+loadSong();
+
+</script>
+
+</body>
+</html>

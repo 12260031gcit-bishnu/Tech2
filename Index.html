@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BishnuTech | Technology Solutions</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+LOADER
+========================= -->
+
+<div id="loader">
+
+<div class="loader-logo">
+
+BishnuTech
+
+</div>
+
+<div class="loader-spinner"></div>
+
+<p>Loading...</p>
+
+</div>
+
+<!-- =========================
+PARTICLE BACKGROUND
+========================= -->
+
+<div id="particles"></div>
+
+<!-- =========================
+MENU BUTTON
+========================= -->
+
+<button class="menu-btn" onclick="toggleMenu()">
+
+☰
+
+</button>
+
+<!-- =========================
+SIDEBAR
+========================= -->
+
+<div id="sidebar" class="sidebar">
+
+<h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+</div>
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header>
+
+<h1>
+
+Welcome to BishnuTech
+
+</h1>
+
+<p id="typing"></p>
+
+<button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+
+Explore Services
+
+</button>
+
+</header>
+
+<!-- =========================
+ABOUT
+========================= -->
+
+<section id="about">
+
+<h2>
+
+About Us
+
+</h2>
+
+<p>
+
+BishnuTech is a modern technology company specializing in web development,
+software engineering, artificial intelligence, cloud solutions, UI/UX
+design, and digital transformation.
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+🚀 Innovation
+
+</h3>
+
+<p>
+
+Building future-ready digital products.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+⚡ Performance
+
+</h3>
+
+<p>
+
+Fast, secure, and scalable solutions.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎯 Quality
+
+</h3>
+
+<p>
+
+Professional software with modern standards.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+SERVICES
+========================= -->
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌐 Web Development</h3>
+<p>Modern responsive websites using HTML, CSS and JavaScript.</p>
+</div>
+
+<div class="card">
+<h3>📱 Mobile Apps</h3>
+<p>Fast and user-friendly mobile applications for Android and iOS.</p>
+</div>
+
+<div class="card">
+<h3>🤖 Artificial Intelligence</h3>
+<p>AI-powered assistants, automation and smart business solutions.</p>
+</div>
+
+<div class="card">
+<h3>☁ Cloud Computing</h3>
+<p>Secure cloud hosting, storage and deployment services.</p>
+</div>
+
+<div class="card">
+<h3>🔒 Cyber Security</h3>
+<p>Protect your business with modern security practices.</p>
+</div>
+
+<div class="card">
+<h3>🎨 UI / UX Design</h3>
+<p>Beautiful interfaces designed for the best user experience.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+STATISTICS
+========================= -->
+
+<section id="stats">
+
+<h2>Our Achievements</h2>
+
+<div class="stats">
+
+<div class="card">
+<h1>250+</h1>
+<p>Projects Completed</p>
+</div>
+
+<div class="card">
+<h1>180+</h1>
+<p>Happy Clients</p>
+</div>
+
+<div class="card">
+<h1>35+</h1>
+<p>Team Members</p>
+</div>
+
+<div class="card">
+<h1>12+</h1>
+<p>Years Experience</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+PORTFOLIO
+========================= -->
+
+<section id="portfolio">
+
+<h2>Featured Projects</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏢 Corporate Website</h3>
+<p>Professional business website with responsive design.</p>
+</div>
+
+<div class="card">
+<h3>🛒 E-Commerce Platform</h3>
+<p>Online shopping solution with modern user interface.</p>
+</div>
+
+<div class="card">
+<h3>📱 Mobile Application</h3>
+<p>Cross-platform mobile application with real-time features.</p>
+</div>
+
+<div class="card">
+<h3>🤖 AI Chat Assistant</h3>
+<p>Smart chatbot built to automate customer support.</p>
+</div>
+
+<div class="card">
+<h3>📊 Business Dashboard</h3>
+<p>Interactive dashboard for analytics and reporting.</p>
+</div>
+
+<div class="card">
+<h3>☁ Cloud Platform</h3>
+<p>Scalable cloud infrastructure for modern businesses.</p>
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+TESTIMONIALS
+========================= -->
+
+<section id="testimonials">
+
+<h2>What Our Clients Say</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+"BishnuTech delivered our website ahead of schedule.
+Professional team and excellent support."
+</p>
+<strong>- Sarah M.</strong>
+</div>
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+"Our business grew after launching the new platform.
+Highly recommended!"
+</p>
+<strong>- David R.</strong>
+</div>
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+"Beautiful design, smooth performance, and great user experience."
+</p>
+<strong>- Emily T.</strong>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+FAQ
+========================= -->
+
+<section id="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>What services do you provide?</h3>
+<p>
+We build websites, web applications, UI/UX designs, AI solutions,
+and cloud-based software.
+</p>
+</div>
+
+<div class="card">
+<h3>Do your websites work on mobile?</h3>
+<p>
+Yes. Every BishnuTech website is fully responsive and works across
+desktop, tablet, and mobile devices.
+</p>
+</div>
+
+<div class="card">
+<h3>Can I request a custom project?</h3>
+<p>
+Absolutely! We create custom solutions tailored to your business needs.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+PRICING
+========================= -->
+
+<section id="pricing">
+
+<h2>Simple Pricing</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Starter</h3>
+
+<h1>$99</h1>
+
+<p>✔ Landing Page</p>
+<p>✔ Responsive Design</p>
+<p>✔ Basic Support</p>
+
+<button onclick="location.href='pricing.html'">
+Choose Plan
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Professional</h3>
+
+<h1>$299</h1>
+
+<p>✔ Multi-page Website</p>
+<p>✔ Dashboard</p>
+<p>✔ Priority Support</p>
+
+<button onclick="location.href='pricing.html'">
+Choose Plan
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Enterprise</h3>
+
+<h1>Custom</h1>
+
+<p>✔ Custom Features</p>
+<p>✔ Dedicated Support</p>
+<p>✔ Scalable Solutions</p>
+
+<button onclick="location.href='pricing.html'">
+Contact Us
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- =========================
+CONTACT
+========================= -->
+
+<section id="contact">
+
+<h2>Contact Us</h2>
+
+<div class="card" style="max-width:700px;margin:auto;">
+
+<form>
+
+<input
+type="text"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+<input
+type="text"
+placeholder="Subject">
+
+<textarea
+rows="6"
+placeholder="Your Message"
+required></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- =========================
+NEWSLETTER
+========================= -->
+
+<section>
+
+<div class="card" style="max-width:700px;margin:auto;text-align:center;">
+
+<h2>Subscribe to Our Newsletter</h2>
+
+<p>Receive updates about our latest services and technology.</p>
+
+<input
+type="email"
+placeholder="Enter your email">
+
+<br><br>
+
+<button>
+Subscribe
+</button>
+
+</div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<h2>BishnuTech</h2>
+
+<p>
+Building the future with technology and innovation.
+</p>
+
+<div style="margin:20px 0;">
+
+<a href="index.html">Home</a> |
+
+<a href="about.html">About</a> |
+
+<a href="services.html">Services</a> |
+
+<a href="portfolio.html">Portfolio</a> |
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
+
+© 2026 BishnuTech. All Rights Reserved.
+
+</p>
+
+</footer>
+
+<!-- =========================
+SCROLL TO TOP
+========================= -->
+
+<button
+id="topBtn"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+⬆
+
+</button>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

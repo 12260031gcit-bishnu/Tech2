@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator | BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+<h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+</div>
+
+<header>
+<h1>Calculator</h1>
+<p>Perform quick calculations.</p>
+</header>
+
+<section>
+
+<div class="card" style="max-width:400px;margin:auto;">
+
+<input
+type="text"
+id="display"
+readonly
+style="width:100%;padding:15px;font-size:24px;text-align:right;margin-bottom:20px;">
+
+<div class="calc-grid">
+
+<button onclick="clearDisplay()">C</button>
+<button onclick="append('/')">÷</button>
+<button onclick="append('*')">×</button>
+<button onclick="removeLast()">⌫</button>
+
+<button onclick="append('7')">7</button>
+<button onclick="append('8')">8</button>
+<button onclick="append('9')">9</button>
+<button onclick="append('-')">−</button>
+
+<button onclick="append('4')">4</button>
+<button onclick="append('5')">5</button>
+<button onclick="append('6')">6</button>
+<button onclick="append('+')">+</button>
+
+<button onclick="append('1')">1</button>
+<button onclick="append('2')">2</button>
+<button onclick="append('3')">3</button>
+<button onclick="calculate()" rowspan="2">=</button>
+
+<button onclick="append('0')">0</button>
+<button onclick="append('.')">.</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 BishnuTech. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+const display=document.getElementById("display");
+
+function append(value){
+display.value+=value;
+}
+
+function clearDisplay(){
+display.value="";
+}
+
+function removeLast(){
+display.value=display.value.slice(0,-1);
+}
+
+function calculate(){
+
+try{
+
+display.value=eval(display.value);
+
+}catch{
+
+alert("Invalid Expression");
+
+display.value="";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes | BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+  <h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+</div>
+
+<header>
+<h1>My Notes</h1>
+<p>Create and save notes in your browser.</p>
+</header>
+
+<section>
+
+<div class="card" style="max-width:800px;margin:auto;">
+
+<textarea
+id="noteInput"
+placeholder="Write your note here..."
+style="width:100%;height:180px;margin-bottom:20px;"></textarea>
+
+<button onclick="saveNote()">💾 Save Note</button>
+
+<button onclick="clearNotes()">🗑 Clear All</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Saved Notes</h2>
+
+<div id="notesContainer" class="cards"></div>
+
+</section>
+
+<footer>
+<p>© 2026 BishnuTech. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+function displayNotes(){
+
+const container = document.getElementById("notesContainer");
+
+container.innerHTML="";
+
+notes.forEach((note,index)=>{
+
+container.innerHTML += `
+<div class="card">
+<p>${note}</p>
+<br>
+<button onclick="deleteNote(${index})">
+Delete
+</button>
+</div>
+`;
+
+});
+
+}
+
+function saveNote(){
+
+const input=document.getElementById("noteInput");
+
+if(input.value.trim()==""){
+
+alert("Please write a note.");
+
+return;
+
+}
+
+notes.push(input.value);
+
+localStorage.setItem("notes",JSON.stringify(notes));
+
+input.value="";
+
+displayNotes();
+
+}
+
+function deleteNote(index){
+
+notes.splice(index,1);
+
+localStorage.setItem("notes",JSON.stringify(notes));
+
+displayNotes();
+
+}
+
+function clearNotes(){
+
+if(confirm("Delete all notes?")){
+
+notes=[];
+
+localStorage.removeItem("notes");
+
+displayNotes();
+
+}
+
+}
+
+displayNotes();
+
+</script>
+
+</body>
+</html>

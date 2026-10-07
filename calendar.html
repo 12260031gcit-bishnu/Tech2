@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendar | BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+<h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+</div>
+
+<header>
+<h1>Calendar</h1>
+<p>Manage your schedule.</p>
+</header>
+
+<section>
+
+<div class="card" style="max-width:700px;margin:auto;">
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+
+<button onclick="previousMonth()">◀</button>
+
+<h2 id="monthYear"></h2>
+
+<button onclick="nextMonth()">▶</button>
+
+</div>
+
+<table id="calendar" style="width:100%;text-align:center;border-collapse:collapse;">
+
+<thead>
+
+<tr>
+
+<th>Sun</th>
+<th>Mon</th>
+<th>Tue</th>
+<th>Wed</th>
+<th>Thu</th>
+<th>Fri</th>
+<th>Sat</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 BishnuTech</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+const monthYear=document.getElementById("monthYear");
+
+const tbody=document.querySelector("#calendar tbody");
+
+let today=new Date();
+
+let currentMonth=today.getMonth();
+
+let currentYear=today.getFullYear();
+
+function renderCalendar(){
+
+tbody.innerHTML="";
+
+const firstDay=new Date(currentYear,currentMonth,1).getDay();
+
+const daysInMonth=new Date(currentYear,currentMonth+1,0).getDate();
+
+const months=[
+"January","February","March","April","May","June",
+"July","August","September","October","November","December"
+];
+
+monthYear.innerHTML=
+months[currentMonth]+" "+currentYear;
+
+let date=1;
+
+for(let i=0;i<6;i++){
+
+let row=document.createElement("tr");
+
+for(let j=0;j<7;j++){
+
+let cell=document.createElement("td");
+
+cell.style.padding="15px";
+
+cell.style.border="1px solid #ddd";
+
+if(i===0 && j<firstDay){
+
+cell.innerHTML="";
+
+}
+
+else if(date>daysInMonth){
+
+break;
+
+}
+
+else{
+
+cell.innerHTML=date;
+
+if(
+date===today.getDate() &&
+currentMonth===today.getMonth() &&
+currentYear===today.getFullYear()
+){
+
+cell.style.background="#2563eb";
+cell.style.color="white";
+cell.style.borderRadius="50%";
+
+}
+
+date++;
+
+}
+
+row.appendChild(cell);
+
+}
+
+tbody.appendChild(row);
+
+}
+
+}
+
+function previousMonth(){
+
+currentMonth--;
+
+if(currentMonth<0){
+
+currentMonth=11;
+
+currentYear--;
+
+}
+
+renderCalendar();
+
+}
+
+function nextMonth(){
+
+currentMonth++;
+
+if(currentMonth>11){
+
+currentMonth=0;
+
+currentYear++;
+
+}
+
+renderCalendar();
+
+}
+
+renderCalendar();
+
+</script>
+
+</body>
+</html>

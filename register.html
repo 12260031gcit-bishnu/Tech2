@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+     <h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+</div>
+
+<header>
+    <h1>Create Your Account</h1>
+    <p>Join BishnuTech and start your digital journey.</p>
+</header>
+
+<section>
+
+<div class="card" style="max-width:600px;margin:auto;">
+
+<h2 style="text-align:center;margin-bottom:25px;">Register</h2>
+
+<form id="registerForm">
+
+<input
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+<input
+type="text"
+placeholder="Username"
+required>
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm Password"
+required>
+
+<label style="display:flex;align-items:center;gap:10px;margin:15px 0;">
+<input type="checkbox" id="showPassword">
+Show Password
+</label>
+
+<label style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+<input type="checkbox" required>
+I agree to the Terms & Conditions
+</label>
+
+<button type="submit">
+Create Account
+</button>
+
+<p style="text-align:center;margin-top:20px;">
+Already have an account?
+<a href="login.html">Login</a>
+</p>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 BishnuTech. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+const showPassword=document.getElementById("showPassword");
+const password=document.getElementById("password");
+const confirmPassword=document.getElementById("confirmPassword");
+
+showPassword.addEventListener("change",function(){
+
+const type=this.checked ? "text" : "password";
+
+password.type=type;
+confirmPassword.type=type;
+
+});
+
+document.getElementById("registerForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+if(password.value!==confirmPassword.value){
+
+alert("❌ Passwords do not match!");
+
+return;
+
+}
+
+alert("🎉 Registration Successful!");
+
+window.location.href="login.html";
+
+});
+</script>
+
+</body>
+</html>

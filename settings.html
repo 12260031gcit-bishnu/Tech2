@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings | BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+  <h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+</div>
+
+<header>
+<h1>Settings</h1>
+<p>Customize your BishnuTech experience.</p>
+</header>
+
+<section>
+
+<div class="card" style="max-width:700px;margin:auto;">
+
+<h2>Appearance</h2>
+
+<label>
+Accent Color
+</label>
+
+<input
+type="color"
+id="accentColor"
+value="#2563eb">
+
+<br><br>
+
+<label>
+
+Font Size
+
+</label>
+
+<select id="fontSize">
+
+<option value="14px">Small</option>
+
+<option value="16px" selected>Medium</option>
+
+<option value="18px">Large</option>
+
+<option value="20px">Extra Large</option>
+
+</select>
+
+<br><br>
+
+<label>
+
+<input
+type="checkbox"
+id="notifications">
+
+Enable Notifications
+
+</label>
+
+<br><br>
+
+<button id="saveSettings">
+
+💾 Save Settings
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 BishnuTech
+
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+const color=document.getElementById("accentColor");
+
+const font=document.getElementById("fontSize");
+
+const notify=document.getElementById("notifications");
+
+color.value=localStorage.getItem("accentColor")||"#2563eb";
+
+font.value=localStorage.getItem("fontSize")||"16px";
+
+notify.checked=localStorage.getItem("notify")==="true";
+
+document.documentElement.style.setProperty("--accent",color.value);
+
+document.body.style.fontSize=font.value;
+
+document.getElementById("saveSettings").onclick=function(){
+
+localStorage.setItem("accentColor",color.value);
+
+localStorage.setItem("fontSize",font.value);
+
+localStorage.setItem("notify",notify.checked);
+
+document.documentElement.style.setProperty("--accent",color.value);
+
+document.body.style.fontSize=font.value;
+
+alert("✅ Settings Saved!");
+
+}
+
+</script>
+
+</body>
+</html>

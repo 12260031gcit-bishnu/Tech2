@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analytics | BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+<h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+
+</div>
+
+<header>
+<h1>Analytics Dashboard</h1>
+<p>Your frontend activity summary.</p>
+</header>
+
+<section>
+
+<div class="cards">
+
+<div class="card">
+<h2 id="visitCount">0</h2>
+<p>Total Visits</p>
+</div>
+
+<div class="card">
+<h2 id="notesCount">0</h2>
+<p>Saved Notes</p>
+</div>
+
+<div class="card">
+<h2 id="taskCount">0</h2>
+<p>Total Tasks</p>
+</div>
+
+<div class="card">
+<h2 id="completedCount">0</h2>
+<p>Completed Tasks</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="card">
+
+<h2>Activity</h2>
+
+<p>📅 Last Visit:
+<span id="lastVisit"></span></p>
+
+<p>🌙 Theme:
+<span id="theme"></span></p>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 BishnuTech</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+let visits = Number(localStorage.getItem("visits") || 0);
+visits++;
+localStorage.setItem("visits", visits);
+
+document.getElementById("visitCount").textContent = visits;
+
+const notes = JSON.parse(localStorage.getItem("notes")) || [];
+document.getElementById("notesCount").textContent = notes.length;
+
+const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+document.getElementById("taskCount").textContent = tasks.length;
+
+const completed = tasks.filter(t => t.done).length;
+document.getElementById("completedCount").textContent = completed;
+
+const today = new Date().toLocaleString();
+localStorage.setItem("lastVisit", today);
+
+document.getElementById("lastVisit").textContent =
+localStorage.getItem("lastVisit");
+
+document.getElementById("theme").textContent =
+document.body.classList.contains("dark-mode")
+? "Dark Mode"
+: "Light Mode";
+
+</script>
+
+</body>
+</html>

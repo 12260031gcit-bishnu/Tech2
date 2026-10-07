@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search | BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+  <h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+</div>
+
+<header>
+<h1>Search</h1>
+<p>Find pages and tools instantly.</p>
+</header>
+
+<section>
+
+<div class="card" style="max-width:700px;margin:auto;">
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search pages..."
+onkeyup="searchPages()">
+
+<br><br>
+
+<div id="results"></div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 BishnuTech. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+const pages=[
+
+{name:"Dashboard",link:"dashboard.html"},
+{name:"Profile",link:"profile.html"},
+{name:"Settings",link:"settings.html"},
+{name:"Notes",link:"notes.html"},
+{name:"To-Do List",link:"todo.html"},
+{name:"Calculator",link:"calculator.html"},
+{name:"Calendar",link:"calendar.html"},
+{name:"About",link:"about.html"},
+{name:"Services",link:"services.html"},
+{name:"Portfolio",link:"portfolio.html"},
+{name:"Pricing",link:"pricing.html"},
+{name:"Contact",link:"contact.html"}
+
+];
+
+function searchPages(){
+
+const keyword=document
+.getElementById("searchBox")
+.value
+.toLowerCase();
+
+const results=document.getElementById("results");
+
+results.innerHTML="";
+
+pages
+.filter(page=>page.name.toLowerCase().includes(keyword))
+.forEach(page=>{
+
+results.innerHTML+=`
+<div class="card" style="margin-top:15px;">
+<h3>${page.name}</h3>
+<button onclick="location.href='${page.link}'">
+Open
+</button>
+</div>
+`;
+
+});
+
+}
+
+searchPages();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications | BishnuTech</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+  <h2>BishnuTech</h2>
+
+<div id="clock"></div>
+
+<a href="index.html">🏠 Home</a>
+
+<a href="about.html">🚀 About</a>
+
+<a href="services.html">💻 Services</a>
+
+<a href="portfolio.html">💼 Portfolio</a>
+
+<a href="pricing.html">💰 Pricing</a>
+
+<a href="contact.html">📞 Contact</a>
+
+<hr>
+
+<a href="dashboard.html">📊 Dashboard</a>
+
+<a href="profile.html">👤 Profile</a>
+
+<a href="settings.html">⚙️ Settings</a>
+
+<a href="notes.html">📝 Notes</a>
+
+<a href="todo.html">✅ To-Do</a>
+
+<a href="calculator.html">🧮 Calculator</a>
+
+<a href="calendar.html">📅 Calendar</a>
+
+<a href="search.html">🔍 Search</a>
+
+<a href="notifications.html">🔔 Notifications</a>
+
+<a href="music.html">🎵 Music</a>
+
+<a href="analytics.html">📈 Analytics</a>
+
+<hr>
+
+<a href="login.html">🔐 Login</a>
+
+<a href="register.html">📝 Register</a>
+
+<a href="#" id="themeBtn">
+
+🌙 Dark Mode
+
+</a>
+
+</div>
+
+<header>
+<h1>Notification Center</h1>
+<p>Stay updated with your latest activity.</p>
+</header>
+
+<section>
+
+<div class="card" style="max-width:800px;margin:auto;">
+
+<h2>Recent Notifications</h2>
+
+<div id="notificationList"></div>
+
+<br>
+
+<button onclick="addNotification()">
+➕ Add Demo Notification
+</button>
+
+<button onclick="clearNotifications()">
+🗑 Clear All
+</button>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 BishnuTech. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+let notifications =
+JSON.parse(localStorage.getItem("notifications")) || [
+
+"🎉 Welcome to BishnuTech!",
+"✅ Your profile is ready.",
+"🌙 Dark mode is available."
+
+];
+
+function saveNotifications(){
+
+localStorage.setItem(
+"notifications",
+JSON.stringify(notifications)
+);
+
+}
+
+function renderNotifications(){
+
+const list=document.getElementById("notificationList");
+
+list.innerHTML="";
+
+notifications.forEach((text,index)=>{
+
+list.innerHTML+=`
+
+<div class="card" style="margin:15px 0;">
+
+<p>${text}</p>
+
+<button onclick="deleteNotification(${index})">
+
+Delete
+
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+function addNotification(){
+
+const time=new Date().toLocaleTimeString();
+
+notifications.unshift(
+
+"🔔 Demo notification created at "+time
+
+);
+
+saveNotifications();
+
+renderNotifications();
+
+}
+
+function deleteNotification(index){
+
+notifications.splice(index,1);
+
+saveNotifications();
+
+renderNotifications();
+
+}
+
+function clearNotifications(){
+
+if(confirm("Delete all notifications?")){
+
+notifications=[];
+
+saveNotifications();
+
+renderNotifications();
+
+}
+
+}
+
+renderNotifications();
+
+</script>
+
+</body>
+</html>
